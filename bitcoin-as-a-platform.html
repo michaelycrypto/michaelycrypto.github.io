@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin as a Platform</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #33ff00;
+            background-color: #001a00;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #66ff33;
+        }
+        a {
+            color: #66ff33;
+        }
+        /* Add glitch effect styles */
+        @keyframes glitch {
+            0% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            1% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            2% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            3% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            4% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            5% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            6% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            7% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            8% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            9% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            10% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            11% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            12% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            13% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            14% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            15% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            16% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            17% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            18% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            19% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            20% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            21% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            22% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            23% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            24% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            25% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            26% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            27% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            28% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            29% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            30% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            31% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            32% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            33% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            34% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            35% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            36% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            37% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            38% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            39% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            40% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            41% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            42% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            43% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            44% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            45% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            46% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            47% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            48% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            49% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            50% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            51% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            52% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            53% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            54% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            55% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            56% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            57% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            58% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            59% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            60% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            61% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            62% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            63% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            64% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            65% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            66% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            67% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            68% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            69% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            70% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            71% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            72% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            73% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            74% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            75% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            76% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            77% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            78% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            79% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            80% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            81% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            82% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            83% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            84% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            85% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            86% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            87% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            88% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            89% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            90% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            91% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            92% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            93% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            94% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            95% { text-shadow: -1px 0 0 red, 1px 0 0 blue; }
+            96% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            97% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            98% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            99% { text-shadow: 1px 0 0 red, -1px 0 0 blue; }
+            100% { text-shadow: -1px 0 0 blue, 1px 0 0 lime; }
+        }
+        #typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: glitch 5s step-end infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="index.html" style="text-decoration: none; color: inherit;"><span id="typing-text"></span></a></h1>
+
+    <h1>Exploring Bitcoin's potential as an application platform.</h1>
+
+    <p>Bitcoin, initially created as a decentralized digital currency, has evolved into a versatile platform hosting a variety of digital assets. This transformation has been driven by the development of new protocols such as Ordinals, BRC-20 and Runes. These new protocols are pushing the boundaries of what is possible on Bitcoin, and their value is rooted in the new functionalities and applications they enable.</p>
+
+    <h2>Bitcoin's Evolution</h2>
+    <p>Bitcoin was introduced in 2009 by an unknown individual or group of individuals using the pseudonym Satoshi Nakamoto. It was designed as a peer-to-peer (P2P) electronic cash system, intended to facilitate direct transactions between parties without the need for intermediaries like banks or financial institutions.</p>
+
+    <p>As Bitcoin gained popularity, it faced scalability issues. The blockchain became congested, leading to slower transaction times and higher fees. These challenges made it less practical for everyday small transactions. Consequently, Bitcoin's role evolved from being primarily a medium of exchange to being more of a store of value, often referred to as "digital gold".</p>
+
+    <h2>Bitcoin as Sovereign Money</h2>
+    <p>The concept of Bitcoin as sovereign money is highly appealing to individuals seeking financial independence and freedom from traditional financial systems and government control.</p>
+
+    <p>Bitcoin's potential as sovereign money arises from its key features:</p>
+    <ul>
+        <li><strong>Decentralization:</strong> Bitcoin operates on a decentralized network of nodes, meaning no single entity has control over the entire network. This reduces the risk of manipulation or control by any government or central authority.</li>
+
+        <li><strong>Fixed Supply:</strong> Unlike fiat currencies, which can be printed at will by central banks, Bitcoin has a fixed supply of 21 million coins. This scarcity is designed to prevent inflation and preserve value over time.</li>
+
+        <li><strong>Censorship Resistance:</strong> Transactions on the Bitcoin network cannot be easily censored or reversed. This ensures that individuals have control over their own money and can transact freely without interference.</li>
+
+        <li><strong>Transparency and Security:</strong> Bitcoin transactions are recorded on a public ledger (the blockchain), providing transparency. The security of the network is maintained through cryptographic principles and the consensus mechanism (Proof of Work), making it extremely difficult to alter transaction history.</li>
+
+        <li><strong>Global Accessibility:</strong> Bitcoin can be accessed and used by anyone with an internet connection, providing a financial system that is inclusive and not restricted by national borders.</li>
+    </ul>
+
+    <h2>Expansion of Bitcoin's Functionality</h2>
+    <p>Recent advancements in the Bitcoin ecosystem have significantly expanded its functionality beyond its original design as a peer-to-peer cash system and a store of value.</p>
+
+    <p>These developments illustrate Bitcoin's evolution from a simple payment system into a versatile platform. This transformation underscores Bitcoin's potential to remain a leading force in the blockchain and cryptocurrency landscape, driving further innovation and adoption.</p>
+
+    <h3>Ordinals</h3>
+    <p>Ordinals is a protocol that allows for tracking and inscribing individual satoshis (the smallest unit of Bitcoin) on the blockchain, creating unique digital collectibles similar to NFTs on Ethereum. Each inscribed satoshi can contain unique data, such as text, images, or videos, transforming it into a distinct digital asset.</p>
+
+    <p>The primary value of the Ordinals protocol lies in its ability to create immutable and verifiable digital assets. By inscribing data onto individual satoshis, Ordinals enables new unique forms of digital ownership and provenance. This has the potential to revolutionize sectors like digital art, collectibles and identity verification, offering a secure and decentralized way to verify and transfer ownership.</p>
+
+    <p>A key feature of Ordinals is that it does not require an external state validation system. Each inscribed satoshi is tracked directly on the Bitcoin blockchain, with its unique data permanently associated with it. This ensures a decentralized and immutable record of ownership without the need for additional indexers.</p>
+
+    <h3>BRC-20</h3>
+    <p>The BRC-20 protocol is a standard built on top of the Bitcoin blockchain for creating and managing fungible tokens. These tokens, which are not native to Bitcoin, are generated and transferred through operations like minting, inscribing and transferring, all formatted in JSON as Ordinals inscriptions.</p>
+
+    <p>The state balance of BRC-20 tokens is validated by external indexers. These indexers monitor the Bitcoin chain for JSON inscriptions that contain operations to mint, inscribe and transfer. They maintain an off-chain state of balances, ensuring transactions adhere to the defined token standards. This process ensures accuracy and consistency without requiring changes to the core Bitcoin protocol.</p>
+
+    <p>BRC-20 development is a collaborative effort led by the Layer 1 Foundation (L1F), with UniSat and BestInSlot as core maintainers. The L1 Foundation has established a governance framework to ensure the protocol's longevity and user safety.</p>
+
+    <p>Future development could see BRC-20 protocol evolve into a virtual machine (VM) potentially allowing for more complex and scalable decentralized applications.</p>
+
+    <h3>Runes</h3>
+    <p>Runes are a protocol designed to enable the creation, minting and transfer of fungible tokens on Bitcoin. They facilitate Bitcoin transactions by allowing the creation of fungible tokens, known as runes, directly on the Bitcoin blockchain.</p>
+
+    <p>The significance of runes relies on Bitcoin's UTXO Model. Future Bitcoin upgrades, such as OP_CAT, have the potential to enhance the capabilities of runes. These upgrades could enable more complex and automated digital interactions, including decentralized applications and smart contracts, thereby further expanding Bitcoin's functionality.</p>
+
+    <p>Runes operate similarly to BRC-20 tokens, with their state balance validated by external indexers. These indexers track runestone data in Bitcoin transactions to manage and verify the creation, minting and transfer of runes. This off-chain verification ensures that the state of runes is accurately maintained while leveraging Bitcoin's blockchain for security.</p>
+
+    <h2>Potential Applications</h2>
+    <p>By enabling new forms of digital assets and decentralized applications, they push the boundaries of what's possible on Bitcoin's blockchain. Here are some potential applications:</p>
+
+    <ul>
+        <li><strong>Decentralized Finance (DeFi):</strong> Bitcoin can drive a new wave of DeFi applications on Bitcoin, providing financial services without intermediaries.</li>
+
+        <li><strong>Expanding Interoperability with Crypto:</strong> One of the most promising applications is the trustless bridging of assets directly between Bitcoin and Ethereum, two of the most secure and liquid blockchains.</li>
+
+        <li><strong>Stablecoins on Bitcoin:</strong> The introduction of stablecoins on Bitcoin could provide a stable medium of exchange and store of value within the Bitcoin ecosystem.</li>
+
+        <li><strong>Tokenized Real-World Assets:</strong> The ability to tokenize real-world assets such as real estate, commodities and securities on the Bitcoin blockchain can open up new investment opportunities and liquidity channels.</li>
+
+        <li><strong>Digital Identity:</strong> Blockchain technology, specifically leveraging Bitcoin's blockchain, offers solutions for secure and verifiable digital identities and ownership records.</li>
+
+        <li><strong>Decentralized Marketplaces:</strong> Decentralized marketplaces leveraging Bitcoin, especially with Partially Signed Bitcoin Transactions (PSBT), represent a promising application by enabling users to create, trade and own unique digital assets securely and privately.</li>
+
+        <li><strong>Gaming and Virtual Worlds:</strong> Bitcoin-based assets can be integrated into gaming and virtual worlds, allowing for in-game economies and the ownership of digital goods.</li>
+    </ul>
+
+    <h2>The Rising Demand for Bitcoin's Blockspace</h2>
+    <p>The demand for Bitcoin blockspace has evolved significantly, driven by expanding use cases beyond traditional financial transactions. Originally designed for payments and as a store of value, Bitcoin's blockspace encountered increasing strain as new protocols and decentralized applications emerged. This shift led to instances where transaction fees within a single block exceeded the block reward, highlighting the urgent need for scaling solutions.</p>
+
+    <h2>Conclusion</h2>
+    <p>The evolving landscape of Bitcoin, driven by new protocols such as Ordinals, BRC-20 and Runes, underscores its transition from a simple digital currency to a versatile platform for a wide array of digital assets. As the ecosystem grows, the demand for Bitcoin blockspace and scaling solutions will continue to rise, driving further advancements and infrastructure improvements.</p>
+
+    <p>The future of Bitcoin depends on the builders who see beyond its current state and push the boundaries of what is possible. By supporting these builders, the Bitcoin ecosystem can continue to evolve.</p>
+
+    <p><a href="index.html">Back to Home</a></p>
+
+    <script>
+        const text = "michaelycrypto";
+        const typingText = document.getElementById('typing-text');
+        const katakana = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+
+        let i = 0;
+        const typingSpeed = 150;
+        const katakanaRotationSpeed = 50;
+        const katakanaRotations = 3;
+
+        function getRandomKatakana() {
+            return katakana[Math.floor(Math.random() * katakana.length)];
+        }
+
+        function rotateKatakana(index, char, rotations) {
+            if (rotations > 0) {
+                let currentText = typingText.textContent;
+                currentText = currentText.substring(0, index) + getRandomKatakana() + currentText.substring(index + 1);
+                typingText.textContent = currentText;
+                setTimeout(() => rotateKatakana(index, char, rotations - 1), katakanaRotationSpeed);
+            } else {
+                let currentText = typingText.textContent;
+                currentText = currentText.substring(0, index) + char + currentText.substring(index + 1);
+                typingText.textContent = currentText;
+            }
+        }
+
+        function typeNextChar() {
+            if (i < text.length) {
+                const char = text.charAt(i);
+                typingText.textContent += getRandomKatakana();
+                rotateKatakana(i, char, katakanaRotations);
+                i++;
+                setTimeout(typeNextChar, typingSpeed);
+            } else {
+                startGlitchEffect();
+            }
+        }
+
+        function startGlitchEffect() {
+            setInterval(glitchEffect, 2000);
+        }
+
+        function glitchEffect() {
+            const glitchDuration = 300;
+            const rotationInterval = 75;
+            const glitchCount = Math.floor(Math.random() * 3) + 1;
+            let indices = [];
+            let originalChars = [];
+
+            for (let i = 0; i < glitchCount; i++) {
+                let index;
+                do {
+                    index = Math.floor(Math.random() * text.length);
+                } while (indices.includes(index));
+                indices.push(index);
+                originalChars.push(text[index]);
+            }
+
+            let rotationCount = Math.floor(glitchDuration / rotationInterval);
+            let glitchRotationInterval = setInterval(() => {
+                indices.forEach((index) => {
+                    typingText.textContent = typingText.textContent.substring(0, index) + getRandomKatakana() + typingText.textContent.substring(index + 1);
+                });
+                rotationCount--;
+                if (rotationCount <= 0) {
+                    clearInterval(glitchRotationInterval);
+                    indices.forEach((index, i) => {
+                        typingText.textContent = typingText.textContent.substring(0, index) + originalChars[i] + typingText.textContent.substring(index + 1);
+                    });
+                }
+            }, rotationInterval);
+        }
+
+        typeNextChar();
+    </script>
+</body>
+</html>

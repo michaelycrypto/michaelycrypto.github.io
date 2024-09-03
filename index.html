@@ -305,13 +305,13 @@
             font-size: 0.8rem;
             transition: all 0.3s ease;
             border-radius: 4px;
-            opacity: 0.5; /* Reduce opacity to appear disabled */
-            cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+            opacity: 1; /* Changed from 0.5 to 1 */
+            cursor: pointer; /* Changed from not-allowed to pointer */
         }
 
         .read-button:hover {
-            background-color: transparent; /* Keep transparent background on hover */
-            color: var(--primary-color); /* Keep the same color on hover */
+            background-color: rgba(51, 255, 0, 0.1); /* Added hover effect */
+            color: var(--secondary-color); /* Changed color on hover */
         }
 
         .carousel-container::-webkit-scrollbar {
@@ -345,7 +345,7 @@
 </head>
 <body>
     <header>
-        <h1><span id="typing-text"></span></h1>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;"><span id="typing-text"></span></a></h1>
     </header>
     <div class="content">
         <div class="section">
@@ -365,8 +365,8 @@
 
         <div class="section">
             <h2>> cat latest_thoughts.txt</h2>
-            <p>Check out my recent musings on the intersection of AI and crypto, or dive into a tutorial on building your first blockchain app.</p>
-            <a href="#" class="cta-button" aria-disabled="true">./read_articles.sh</a>
+            <p>Check out my recent musings on the intersection of AI and crypto.</p>
+            <!-- Removed: <a href="#" class="cta-button" aria-disabled="true">./read_articles.sh</a> -->
         </div>
 
         <div class="section">
@@ -387,8 +387,8 @@
             <div class="carousel-container">
                 <div class="carousel-track">
                     <div class="carousel-item">
-                        <h3>Bitcoin as a Platform</h3>
-                        <a href="#" class="read-button" aria-disabled="true">read</a>
+                        <h3>Exploring Bitcoin's potential as an application platform</h3>
+                        <a href="./bitcoin-as-a-platform.html" class="read-button">read</a>
                     </div>
                 </div>
             </div>
