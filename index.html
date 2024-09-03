@@ -297,19 +297,21 @@
             position: absolute;
             bottom: 1rem;
             right: 1rem;
-            background-color: transparent; /* Remove background */
+            background-color: transparent;
             color: var(--primary-color);
-            border: 1px solid var(--primary-color); /* Add border */
-            padding: 3px 8px; /* Reduce padding */
+            border: 1px solid var(--primary-color);
+            padding: 3px 8px;
             text-decoration: none;
-            font-size: 0.8rem; /* Smaller font size */
+            font-size: 0.8rem;
             transition: all 0.3s ease;
             border-radius: 4px;
+            opacity: 0.5; /* Reduce opacity to appear disabled */
+            cursor: not-allowed; /* Change cursor to indicate it's not clickable */
         }
 
         .read-button:hover {
-            background-color: var(--primary-color);
-            color: var(--background-color);
+            background-color: transparent; /* Keep transparent background on hover */
+            color: var(--primary-color); /* Keep the same color on hover */
         }
 
         .carousel-container::-webkit-scrollbar {
@@ -385,44 +387,8 @@
             <div class="carousel-container">
                 <div class="carousel-track">
                     <div class="carousel-item">
-                        <h3>AI in Crypto</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Bitcoin's Future</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Ordinals Explained</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Web3 Development</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>DeFi Trends</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>NFT Revolution</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Smart Contracts 101</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Crypto Security</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Layer 2 Solutions</h3>
-                        <a href="#" class="read-button">read</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Tokenomics Basics</h3>
-                        <a href="#" class="read-button">read</a>
+                        <h3>Bitcoin as a Platform</h3>
+                        <a href="#" class="read-button" aria-disabled="true">read</a>
                     </div>
                 </div>
             </div>
