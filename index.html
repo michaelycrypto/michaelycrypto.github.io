@@ -53,10 +53,12 @@
             margin-top: 20px;
             transition: all 0.3s ease;
             font-weight: bold;
+            opacity: 0.5; /* Reduce opacity to appear disabled */
+            cursor: not-allowed; /* Change cursor to indicate it's not clickable */
         }
         .cta-button:hover {
-            background-color: var(--primary-color);
-            color: var(--background-color);
+            background-color: var(--accent-color); /* Keep the same background on hover */
+            color: var(--primary-color); /* Keep the same color on hover */
         }
         .social-links {
             margin-top: 2rem;
@@ -200,37 +202,37 @@
 
         .blog-carousel {
             padding: 2rem;
-            background-color: rgba(0, 26, 0, 0.8);
-            margin: 2rem 0; /* Add vertical margin */
+            background-color: rgba(0, 26, 0, 0.3); /* Reduced opacity */
+            margin: 2rem 0;
         }
 
         .carousel-wrapper {
             position: relative;
-            padding: 0 48px; /* Add gutter */
-            margin: 1rem 0; /* Add vertical margin inside the wrapper */
+            padding: 0 48px;
+            margin: 1rem 0;
         }
 
         .carousel-arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: var(--accent-color);
+            background-color: transparent; /* Remove background */
             color: var(--primary-color);
-            border: none;
-            width: 40px;
-            height: 40px;
+            border: 1px solid var(--primary-color); /* Add border */
+            width: 30px; /* Reduce size */
+            height: 30px;
             cursor: pointer;
             z-index: 10;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 1;
+            opacity: 0.7; /* Make it slightly transparent */
         }
 
         .carousel-arrow:hover {
-            background-color: var(--primary-color);
-            color: var(--background-color);
+            background-color: rgba(51, 255, 0, 0.1); /* Subtle hover effect */
+            color: var(--secondary-color);
         }
 
         .carousel-arrow:focus {
@@ -255,20 +257,20 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
-            padding: 1rem 0; /* Add vertical padding */
+            padding: 1rem 0;
         }
 
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease;
-            padding: 0.5rem 0; /* Add some padding to prevent shadow cropping */
+            padding: 0.5rem 0;
         }
 
         .carousel-item {
             flex: 0 0 auto;
             height: 150px;
-            background-color: var(--accent-color);
-            border: 1px solid var(--primary-color);
+            background-color: rgba(0, 51, 0, 0.3); /* More transparent background */
+            border: 1px solid rgba(51, 255, 0, 0.3); /* Softer border */
             padding: 1rem;
             position: relative;
             display: flex;
@@ -276,12 +278,13 @@
             justify-content: space-between;
             transition: all 0.3s ease;
             box-sizing: border-box;
-            margin: 0.5rem 0; /* Add vertical margin to each item */
+            margin: 0.5rem 0;
+            box-shadow: none; /* Remove default shadow */
         }
 
         .carousel-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+            transform: translateY(-3px); /* Reduce lift effect */
+            box-shadow: 0 3px 10px rgba(0, 255, 0, 0.1); /* Softer shadow on hover */
         }
 
         .carousel-item h3 {
@@ -294,21 +297,21 @@
             position: absolute;
             bottom: 1rem;
             right: 1rem;
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            padding: 5px 10px;
+            background-color: transparent; /* Remove background */
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color); /* Add border */
+            padding: 3px 8px; /* Reduce padding */
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem; /* Smaller font size */
             transition: all 0.3s ease;
             border-radius: 4px;
         }
 
         .read-button:hover {
-            background-color: var(--secondary-color);
-            transform: scale(1.05);
+            background-color: var(--primary-color);
+            color: var(--background-color);
         }
 
-        /* Improved scrollbar styles */
         .carousel-container::-webkit-scrollbar {
             height: 8px;
             display: block;
@@ -328,13 +331,12 @@
             scrollbar-color: var(--primary-color) var(--background-color);
         }
 
-        /* Responsive adjustments */
         @media (max-width: 600px) {
             .carousel-wrapper {
-                padding: 0 24px; /* Smaller gutter for phones */
+                padding: 0 24px;
             }
             .carousel-item {
-                height: 200px; /* Taller items for better readability on phones */
+                height: 200px;
             }
         }
     </style>
@@ -352,7 +354,7 @@
         <div class="section">
             <h2>> ls topics</h2>
             <ul>
-                <li>AI and Machine Learning</li>
+                <li>AI Workflow</li>
                 <li>Crypto Markets and Bitcoin</li>
                 <li>Ordinals & BRC-20 Tokens</li>
                 <li>Product Design & Development</li>
@@ -362,7 +364,7 @@
         <div class="section">
             <h2>> cat latest_thoughts.txt</h2>
             <p>Check out my recent musings on the intersection of AI and crypto, or dive into a tutorial on building your first blockchain app.</p>
-            <a href="#" class="cta-button">./read_articles.sh</a>
+            <a href="#" class="cta-button" aria-disabled="true">./read_articles.sh</a>
         </div>
 
         <div class="section">
@@ -374,7 +376,6 @@
         </div>
     </div>
 
-    <!-- Add this new section for the blog carousel -->
     <div class="blog-carousel">
         <h2>> ls blog_posts</h2>
         <div class="carousel-wrapper">
@@ -515,21 +516,22 @@
 
             const items = track.children;
             const totalItems = items.length;
-            let itemsPerPage = 5; // Default for large screens
+            let itemsPerPage = 5;
             let currentPage = 0;
+            const pageGutter = 48;
 
             function updateItemsPerPage() {
                 const containerWidth = container.offsetWidth;
                 if (containerWidth < 600) {
-                    itemsPerPage = 1; // Phone screens
+                    itemsPerPage = 1;
                 } else if (containerWidth < 900) {
-                    itemsPerPage = 2; // Tablet screens
+                    itemsPerPage = 2;
                 } else if (containerWidth < 1200) {
-                    itemsPerPage = 3; // Small desktop screens
+                    itemsPerPage = 3;
                 } else if (containerWidth < 1500) {
-                    itemsPerPage = 4; // Medium desktop screens
+                    itemsPerPage = 4;
                 } else {
-                    itemsPerPage = 5; // Large desktop screens
+                    itemsPerPage = 5;
                 }
                 return Math.ceil(totalItems / itemsPerPage);
             }
@@ -545,7 +547,7 @@
                 currentPage += direction;
                 currentPage = Math.max(0, Math.min(currentPage, totalPages - 1));
 
-                const scrollAmount = container.offsetWidth * currentPage;
+                const scrollAmount = (container.offsetWidth + pageGutter) * currentPage;
                 container.scrollTo({
                     left: scrollAmount,
                     behavior: 'smooth'
@@ -557,18 +559,17 @@
             function resizeCarousel() {
                 const containerWidth = container.offsetWidth;
                 const totalPages = updateItemsPerPage();
-                const itemWidth = (containerWidth - (itemsPerPage - 1) * 16) / itemsPerPage; // 16px gap between items
+                const itemWidth = (containerWidth - (itemsPerPage - 1) * 16) / itemsPerPage;
 
-                track.style.width = `${containerWidth * totalPages}px`;
+                track.style.width = `${(containerWidth * totalPages) + (pageGutter * (totalPages - 1))}px`;
 
                 Array.from(items).forEach((item, index) => {
                     item.style.width = `${itemWidth}px`;
-                    item.style.marginRight = (index + 1) % itemsPerPage === 0 ? '0' : '16px';
+                    item.style.marginRight = (index + 1) % itemsPerPage === 0 ? `${pageGutter}px` : '16px';
                 });
 
-                // Adjust scroll position after resize
                 container.scrollTo({
-                    left: containerWidth * currentPage,
+                    left: (containerWidth + pageGutter) * currentPage,
                     behavior: 'auto'
                 });
 
@@ -578,16 +579,13 @@
             leftArrow.addEventListener('click', () => scrollCarousel(-1));
             rightArrow.addEventListener('click', () => scrollCarousel(1));
 
-            // Keyboard navigation
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowLeft') scrollCarousel(-1);
                 if (e.key === 'ArrowRight') scrollCarousel(1);
             });
 
-            // Initial setup
             resizeCarousel();
 
-            // Update on window resize
             window.addEventListener('resize', resizeCarousel);
         });
     </script>
