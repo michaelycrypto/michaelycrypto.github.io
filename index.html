@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>michaelycrypto.com</title>
+    <title>michaelycrypto</title>
     <style>
         :root {
             --primary-color: #33ff00;
@@ -197,6 +197,146 @@
                 flex-basis: 100%;
             }
         }
+
+        .blog-carousel {
+            padding: 2rem;
+            background-color: rgba(0, 26, 0, 0.8);
+            margin: 2rem 0; /* Add vertical margin */
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            padding: 0 48px; /* Add gutter */
+            margin: 1rem 0; /* Add vertical margin inside the wrapper */
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        .carousel-arrow:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .left-arrow {
+            left: 0;
+        }
+
+        .right-arrow {
+            right: 0;
+        }
+
+        .icon-chevron {
+            width: 24px;
+            height: 24px;
+        }
+
+        .carousel-container {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem 0; /* Add vertical padding */
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            padding: 0.5rem 0; /* Add some padding to prevent shadow cropping */
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            height: 150px;
+            background-color: var(--accent-color);
+            border: 1px solid var(--primary-color);
+            padding: 1rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            margin: 0.5rem 0; /* Add vertical margin to each item */
+        }
+
+        .carousel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+        }
+
+        .carousel-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        .read-button {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 5px 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .read-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* Improved scrollbar styles */
+        .carousel-container::-webkit-scrollbar {
+            height: 8px;
+            display: block;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            background: var(--background-color);
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .carousel-container {
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--background-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .carousel-wrapper {
+                padding: 0 24px; /* Smaller gutter for phones */
+            }
+            .carousel-item {
+                height: 200px; /* Taller items for better readability on phones */
+            }
+        }
     </style>
 </head>
 <body>
@@ -231,6 +371,63 @@
                 <a href="https://twitter.com/michaelycrypto" target="_blank">X</a>
                 <a href="https://github.com/michaelycrypto" target="_blank">GitHub</a>
             </div>
+        </div>
+    </div>
+
+    <!-- Add this new section for the blog carousel -->
+    <div class="blog-carousel">
+        <h2>> ls blog_posts</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow left-arrow" aria-label="Previous articles">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-chevron"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <h3>AI in Crypto</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Bitcoin's Future</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Ordinals Explained</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Web3 Development</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>DeFi Trends</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>NFT Revolution</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Smart Contracts 101</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Crypto Security</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Layer 2 Solutions</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Tokenomics Basics</h3>
+                        <a href="#" class="read-button">read</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow right-arrow" aria-label="Next articles">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-chevron"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
         </div>
     </div>
 
@@ -274,17 +471,16 @@
         }
 
         function startGlitchEffect() {
-            setInterval(glitchEffect, 2000); // Trigger glitch effect every 2 seconds
+            setInterval(glitchEffect, 2000);
         }
 
         function glitchEffect() {
-            const glitchDuration = 300; // Increased duration to 500ms for more visible rotation
-            const rotationInterval = 75; // Rotate characters every 25ms
-            const glitchCount = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3
+            const glitchDuration = 300;
+            const rotationInterval = 75;
+            const glitchCount = Math.floor(Math.random() * 3) + 1;
             let indices = [];
             let originalChars = [];
 
-            // Select random indices to glitch
             for (let i = 0; i < glitchCount; i++) {
                 let index;
                 do {
@@ -294,7 +490,6 @@
                 originalChars.push(text[index]);
             }
 
-            // Start rotation
             let rotationCount = Math.floor(glitchDuration / rotationInterval);
             let glitchRotationInterval = setInterval(() => {
                 indices.forEach((index) => {
@@ -303,7 +498,6 @@
                 rotationCount--;
                 if (rotationCount <= 0) {
                     clearInterval(glitchRotationInterval);
-                    // Revert to original characters
                     indices.forEach((index, i) => {
                         typingText.textContent = typingText.textContent.substring(0, index) + originalChars[i] + typingText.textContent.substring(index + 1);
                     });
@@ -312,6 +506,90 @@
         }
 
         typeNextChar();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.carousel-track');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            const container = document.querySelector('.carousel-container');
+
+            const items = track.children;
+            const totalItems = items.length;
+            let itemsPerPage = 5; // Default for large screens
+            let currentPage = 0;
+
+            function updateItemsPerPage() {
+                const containerWidth = container.offsetWidth;
+                if (containerWidth < 600) {
+                    itemsPerPage = 1; // Phone screens
+                } else if (containerWidth < 900) {
+                    itemsPerPage = 2; // Tablet screens
+                } else if (containerWidth < 1200) {
+                    itemsPerPage = 3; // Small desktop screens
+                } else if (containerWidth < 1500) {
+                    itemsPerPage = 4; // Medium desktop screens
+                } else {
+                    itemsPerPage = 5; // Large desktop screens
+                }
+                return Math.ceil(totalItems / itemsPerPage);
+            }
+
+            function updateArrowVisibility() {
+                const totalPages = updateItemsPerPage();
+                leftArrow.style.display = currentPage > 0 ? 'block' : 'none';
+                rightArrow.style.display = currentPage < totalPages - 1 ? 'block' : 'none';
+            }
+
+            function scrollCarousel(direction) {
+                const totalPages = updateItemsPerPage();
+                currentPage += direction;
+                currentPage = Math.max(0, Math.min(currentPage, totalPages - 1));
+
+                const scrollAmount = container.offsetWidth * currentPage;
+                container.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+
+                updateArrowVisibility();
+            }
+
+            function resizeCarousel() {
+                const containerWidth = container.offsetWidth;
+                const totalPages = updateItemsPerPage();
+                const itemWidth = (containerWidth - (itemsPerPage - 1) * 16) / itemsPerPage; // 16px gap between items
+
+                track.style.width = `${containerWidth * totalPages}px`;
+
+                Array.from(items).forEach((item, index) => {
+                    item.style.width = `${itemWidth}px`;
+                    item.style.marginRight = (index + 1) % itemsPerPage === 0 ? '0' : '16px';
+                });
+
+                // Adjust scroll position after resize
+                container.scrollTo({
+                    left: containerWidth * currentPage,
+                    behavior: 'auto'
+                });
+
+                updateArrowVisibility();
+            }
+
+            leftArrow.addEventListener('click', () => scrollCarousel(-1));
+            rightArrow.addEventListener('click', () => scrollCarousel(1));
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') scrollCarousel(-1);
+                if (e.key === 'ArrowRight') scrollCarousel(1);
+            });
+
+            // Initial setup
+            resizeCarousel();
+
+            // Update on window resize
+            window.addEventListener('resize', resizeCarousel);
+        });
     </script>
 </body>
 </html>
