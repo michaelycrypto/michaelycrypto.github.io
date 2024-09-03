@@ -1,6 +1,6 @@
 const text = "michaelycrypto";
 const typingText = document.getElementById('typing-text');
-const katakana = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン_________~~~~----====";
+const katakana = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
 let i = 0;
 const typingSpeed = 225;
 const katakanaRotationSpeed = 75;

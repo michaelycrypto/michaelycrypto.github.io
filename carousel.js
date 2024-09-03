@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let itemsPerPage = 5;
     let currentPage = 0;
     const pageGutter = 48;
+    const itemGap = 16;
 
     function updateItemsPerPage() {
         const containerWidth = container.offsetWidth;
@@ -49,13 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function resizeCarousel() {
         const containerWidth = container.offsetWidth;
         const totalPages = updateItemsPerPage();
-        const itemWidth = (containerWidth - (itemsPerPage - 1) * 16) / itemsPerPage;
+        const itemWidth = (containerWidth - (itemsPerPage - 1) * itemGap) / itemsPerPage;
 
         track.style.width = `${(containerWidth * totalPages) + (pageGutter * (totalPages - 1))}px`;
 
         Array.from(items).forEach((item, index) => {
             item.style.width = `${itemWidth}px`;
-            item.style.marginRight = (index + 1) % itemsPerPage === 0 ? `${pageGutter}px` : '16px';
+            item.style.marginRight = (index + 1) % itemsPerPage === 0 ? `${pageGutter}px` : `${itemGap}px`;
         });
 
         container.scrollTo({

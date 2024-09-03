@@ -9,60 +9,72 @@
 </head>
 <body>
     <header>
-        <h2 class="glitch-logo"><a href="index.html"><span id="typing-text"></span></a></h2>
+        <h1 class="glitch-logo"><a href="index.html"><span id="typing-text"></span></a></h1>
     </header>
-    <div class="content">
-        <div class="section">
-            <h2>> whoami</h2>
-            <p>Hey there! I'm Michael, a tech enthusiast with a passion for AI, cryptocurrencies, and building cool stuff. This is my digital playground where I share my experiments, thoughts and discoveries.</p>
-        </div>
 
-        <div class="section">
-            <h2>> ls topics</h2>
-            <ul>
-                <li>AI Workflow</li>
-                <li>Crypto Markets and Bitcoin</li>
-                <li>Ordinals & BRC-20 Tokens</li>
-                <li>Product Design & Development</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>> cat latest_thoughts.txt</h2>
-            <p>Check out my recent musings on the intersection of AI and crypto.</p>
-            <!-- Removed: <a href="#" class="cta-button" aria-disabled="true">./read_articles.sh</a> -->
-        </div>
-
-        <div class="section">
-            <h2>> socials</h2>
-            <div class="social-links">
-                <a href="https://twitter.com/michaelycrypto" target="_blank">X</a>
-                <a href="https://github.com/michaelycrypto" target="_blank">GitHub</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="blog-carousel">
-        <h2>> ls blog_posts</h2>
-        <div class="carousel-wrapper">
-            <button class="carousel-arrow left-arrow" aria-label="Previous articles">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-chevron"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="carousel-item">
-                        <h3>Exploring Bitcoin's potential as an application platform</h3>
-                        <a href="./bitcoin-as-a-platform.html" class="read-button">read</a>
-                    </div>
+    <main class="content">
+        <section class="hero">
+            <div class="container">
+                <div id="globe-container">
+                    <div id="globe"></div>
+                    <div id="globe-overlay"></div>
+                </div>
+                <div class="whoami">
+                    <h2>> about</h2>
+                    <p>Hey there! I'm Michael, a tech enthusiast with a passion for AI, cryptocurrencies, and building cool stuff. This is my digital playground where I share my experiments, thoughts and discoveries.</p>
                 </div>
             </div>
-            <button class="carousel-arrow right-arrow" aria-label="Next articles">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-chevron"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-        </div>
-    </div>
+        </section>
+
+        <section class="topics">
+            <div class="container">
+                <h2>> topics</h2>
+                <ul>
+                    <li>AI Workflow</li>
+                    <li>Crypto Markets and Bitcoin</li>
+                    <li>Ordinals & BRC-20 Tokens</li>
+                    <li>Product Design & Development</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="blog">
+            <div class="container">
+                <h2>> articles</h2>
+                <p>Check out my recent musings on crypto.</p>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow left-arrow" aria-label="Previous articles">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-chevron"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-item">
+                            <h3>Exploring Bitcoin's potential as an application platform</h3>
+                            <a href="./bitcoin-as-a-platform.html" class="read-button">read</a>
+                        </div>
+                        <!-- Add more carousel items here -->
+                    </div>
+                </div>
+                <button class="carousel-arrow right-arrow" aria-label="Next articles">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-chevron"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="socials">
+            <div class="container">
+                <h2>> socials</h2>
+                <div class="social-links">
+                    <a href="https://twitter.com/michaelycrypto" target="_blank">X</a>
+                    <a href="https://github.com/michaelycrypto" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="glitch.js"></script>
+    <script src="globe.js"></script>
     <script src="carousel.js"></script>
 </body>
 </html>
